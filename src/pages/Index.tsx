@@ -36,42 +36,48 @@ const Index = () => {
       description: "Flutter-based shopping app with real-time inventory",
       techStack: ["Flutter", "Firebase", "Dart"],
       category: "Mobile Apps",
-      github: "https://github.com/YOURUSERNAME/ecommerce-app"
+      github: "https://github.com/YOURUSERNAME/ecommerce-app",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
     },
     {
       name: "Portfolio Website",
       description: "Responsive React portfolio with modern animations",
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       category: "Websites",
-      github: "https://github.com/YOURUSERNAME/portfolio"
+      github: "https://github.com/YOURUSERNAME/portfolio",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
     },
     {
       name: "Task Management UI",
       description: "Clean and intuitive task management interface",
       techStack: ["Figma", "Adobe XD", "Prototyping"],
       category: "UI Designs",
-      github: "https://github.com/YOURUSERNAME/task-ui"
+      github: "https://github.com/YOURUSERNAME/task-ui",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop"
     },
     {
       name: "Weather App",
       description: "Native Android weather app with location services",
       techStack: ["Java", "Android Studio", "REST API"],
       category: "Mobile Apps",
-      github: "https://github.com/YOURUSERNAME/weather-app"
+      github: "https://github.com/YOURUSERNAME/weather-app",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop"
     },
     {
       name: "Restaurant Website",
       description: "Full-stack restaurant booking system",
       techStack: ["Node.js", "Express", "MongoDB"],
       category: "Websites",
-      github: "https://github.com/YOURUSERNAME/restaurant-site"
+      github: "https://github.com/YOURUSERNAME/restaurant-site",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
     },
     {
       name: "Banking App Design",
       description: "Modern banking app interface with dark mode",
       techStack: ["Figma", "Sketch", "Principle"],
       category: "UI Designs",
-      github: "https://github.com/YOURUSERNAME/banking-ui"
+      github: "https://github.com/YOURUSERNAME/banking-ui",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop"
     }
   ];
 
@@ -248,7 +254,17 @@ const Index = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card key={project.name} className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={project.name} className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 animate-fade-in overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 to-transparent"></div>
+                </div>
+                
                 <CardHeader>
                   <CardTitle className="text-white text-xl">{project.name}</CardTitle>
                   <CardDescription className="text-slate-400">
